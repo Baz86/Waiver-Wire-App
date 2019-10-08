@@ -15,6 +15,7 @@ class NewsItemsController < ApplicationController
   # GET /news_items/new
   def new
     @news_item = NewsItem.new
+    @players = Player.all
   end
 
   # GET /news_items/1/edit
@@ -69,6 +70,6 @@ class NewsItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def news_item_params
-      params.fetch(:news_item, {})
+      params.require(:news_item).permit(:body, :player_id)
     end
 end

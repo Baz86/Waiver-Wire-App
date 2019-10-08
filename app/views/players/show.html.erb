@@ -15,5 +15,14 @@
   <%= @player.position %>
 </p>
 
+<h4>Player News</h4>
+
+<% @news_items.each do |item| %>
+  <div>
+    <p><%= item.created_at %></p>
+    <p><%= item.body %></p>
+  </div>
+<% end %>
+
 <%= link_to 'Edit', edit_player_path(@player) %> |
 <%= link_to 'Back', players_path %>

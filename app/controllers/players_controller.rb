@@ -10,6 +10,7 @@ class PlayersController < ApplicationController
   # GET /players/1
   # GET /players/1.json
   def show
+    @news_items = @player.news_items.limit(3)
   end
 
   # GET /players/new

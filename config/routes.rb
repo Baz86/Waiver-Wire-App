@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   resources :players
   
   resources :weekly_scores
+
+  resources :news_items
   
 end

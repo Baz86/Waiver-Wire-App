@@ -11,6 +11,16 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.label :players %>
+    <%= form.select :player_id, @players.collect { |player| [player.name, player.id] }, prompt: 'Select Player', :selected => params['player_id']  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body, id: :news_item_body %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
