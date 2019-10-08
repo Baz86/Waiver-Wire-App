@@ -1,0 +1,22 @@
+<%= form_with(model: weekly_score, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :players %>
+    <%= form.select :player_id, @players.collect { |player| [player.name, player.id] }, prompt: 'Select Player', :selected => params['player_id']  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :week %>
+    <%= form.select :week, options_for_select([["Select One", ""], 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :score %>
+    <%= form.text_field :score, id: :weekly_score %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>
