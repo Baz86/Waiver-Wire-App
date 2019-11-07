@@ -45,3 +45,12 @@
 
 <%= link_to '<i class="fas fa-user-plus"></i>'.html_safe, new_player_path %>
 <%= link_to '<i class="fas fa-book-open"></i>'.html_safe, new_news_item_path %>
+
+<div class ="twitter_timeline">
+  <% tweets = $twitter.user_timeline("@NFL").take(3) %>
+  <ul>
+    <% tweets.each do |tweet| %>
+      <li><%= tweet.text %></li>
+    <% end %>
+  </ul>
+</div>
